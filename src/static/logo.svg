@@ -1,0 +1,29 @@
+<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="250" cy="250" r="250" fill="black"/>
+<circle cx="250" cy="250" r="195" stroke="white" stroke-width="10"/>
+<circle cx="250" cy="250" r="120" stroke="white" stroke-width="10"/>
+<circle cx="57" cy="225" r="16" fill="white" stroke="white" stroke-width="2"/>
+<circle cx="170" cy="73" r="16" fill="white" stroke="white" stroke-width="2"/>
+<circle cx="366" cy="88" r="16" fill="white" stroke="white" stroke-width="2"/>
+<circle cx="446" cy="265" r="16" fill="white" stroke="white" stroke-width="2"/>
+<circle cx="336" cy="426" r="16" fill="white" stroke="white" stroke-width="2"/>
+<circle cx="133" cy="405" r="16" fill="white" stroke="white" stroke-width="2"/>
+<circle cx="228.5" cy="367.5" r="14.5" fill="white" stroke="white" stroke-width="2"/>
+<circle cx="138.5" cy="287.5" r="14.5" fill="white" stroke="white" stroke-width="2"/>
+<circle cx="165.5" cy="163.5" r="14.5" fill="white" stroke="white" stroke-width="2"/>
+<circle cx="287.5" cy="136.5" r="14.5" fill="white" stroke="white" stroke-width="2"/>
+<circle cx="364.5" cy="209.5" r="14.5" fill="white" stroke="white" stroke-width="2"/>
+<circle cx="349.5" cy="320.5" r="14.5" fill="white" stroke="white" stroke-width="2"/>
+<path d="M133 408C112 363 121 295.5 133 288" stroke="white" stroke-width="8"/>
+<path d="M106 381C72.5 275 119 187.5 162.5 163.5" stroke="white" stroke-width="8"/>
+<path d="M52 225.5C97 180 146.667 168.833 165.5 164" stroke="white" stroke-width="8"/>
+<path d="M61.5 194.5C130 104.5 240 109 284.5 134" stroke="white" stroke-width="8"/>
+<path d="M170 74.5C227.5 79 269.5 115 286.5 136" stroke="white" stroke-width="8"/>
+<path d="M167 72.5C288.5 38 360 164 365 208" stroke="white" stroke-width="8"/>
+<path d="M361.5 84.5C377.5 125 384 195.5 366.5 210" stroke="white" stroke-width="8"/>
+<path d="M409.5 134C409.5 225.5 384 296 350.5 321.5" stroke="white" stroke-width="8"/>
+<path d="M448 260C409.5 312 367 321 350.5 321" stroke="white" stroke-width="8"/>
+<path d="M428 334C357.868 394.563 255.633 381.966 226 365.008" stroke="white" stroke-width="8"/>
+<path d="M338 428.5C261 421.5 229 378.5 224.5 365" stroke="white" stroke-width="8"/>
+<path d="M135 292C153.649 394.334 226.124 438.479 266 445" stroke="white" stroke-width="8"/>
+</svg>
