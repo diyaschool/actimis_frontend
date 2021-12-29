@@ -4,11 +4,25 @@ body {
 }
 
 .login_div {
-  background-color: gainsboro;
+  background-color: lightcyan;
   position: absolute;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   padding: 20px;
+  border-radius: 8px;
+  height: 35rem;
+  width: 25rem;
+}
+
+.login_logo {
+  
+}
+
+@media only screen and (max-width: 500px) {
+  .login_div {
+    height: 25rem;
+    width: 18rem;
+  }
 }
