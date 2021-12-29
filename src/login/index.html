@@ -10,7 +10,9 @@
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <title>Actimis Login</title>
   </head>
-  <body>
+  <body unselectable="on"
+      onselectstart="return false;"
+      onmousedown="return false;">
     <script>
         function handleCredentialResponse(response) {
           console.log(response.credential);
@@ -25,9 +27,15 @@
       data-close_on_tap_outside="false">
     </div>
     <div class="login_div">
+      <div class="login_branding">
+        <img src="/static/logo_transparent.svg" alt="Actimis Logo" class="login_logo">
+        <text class="login_branding_text">Actimis</text>
+      </div>
       <center>
-        <img src="/static/logo.svg" alt="Actimis Logo" class="login_logo">
-        <text class="login_branding">Actimis</text>
+        <text class="login_text">Login</text>
+        <hr class="login_hr">
+        <p class="info_p">Use your Google Account provided by the school to access your dashboard.<br>
+        Click the button below to prompt for login. Then choose the email address ending in <code>@diyaschool.com</code>.</p>
         <div class="g_id_signin"
           data-type="standard"
           data-shape="rectangular"
