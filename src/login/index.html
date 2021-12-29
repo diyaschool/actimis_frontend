@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- <meta name="google-signin-client_id" content="18178721920-v27esm525ddg2pdmemu7i37olq9bglkq.apps.googleusercontent.com"> -->
+    <script src="/static/jquery-3.6.0.js"></script>
+    <link href="/static/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="/static/common.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <title>Actimis Login</title>
+  </head>
+  <body>
+    <script>
+        function handleCredentialResponse(response) {
+          console.log("Encoded JWT ID token: " + response.credential);
+        }
+        // window.onload = function () {
+        //   google.accounts.id.initialize({
+        //     client_id: "18178721920-v27esm525ddg2pdmemu7i37olq9bglkq.apps.googleusercontent.com",
+        //     callback: handleCredentialResponse
+        //   });
+        //   google.accounts.id.renderButton(
+        //     document.getElementById("g_id_signin"),
+        //     { theme: "filled_blue", size: "large", shape: "rectangular",
+        //       text: "continue_with", callback: "handleCredentialResponse"}  // customization attributes
+        //   );
+        //   // google.accounts.id.prompt(); // also display the One Tap dialog
+        // }
+    </script>
+
+
+    <div id="g_id_onload"
+     data-client_id="18178721920-v27esm525ddg2pdmemu7i37olq9bglkq.apps.googleusercontent.com"
+     data-context="use"
+     data-ux_mode="popup"
+     data-callback="handleCredentialResponse"
+     data-nonce=""
+     data-auto_prompt="false">
+    </div>
+
+    <div class="login_div">
+      <div class="g_id_signin"
+           data-type="standard"
+           data-shape="rectangular"
+           data-theme="filled_blue"
+           data-text="signin_with"
+           data-size="large"
+           data-logo_alignment="left">
+      </div>
+    </div>
+  </body>
+</html>
