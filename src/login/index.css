@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body {
+  background-color: darkslategray;
+}
+
+.login_div {
+  background-color: lightcyan;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 8px;
+  height: 35rem;
+  width: 25rem;
+}
+
+.login_branding {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 11rem;
+}
+
+.login_logo {
+  height: 8rem;
+  margin-right: 1rem;
+}
+
+.login_branding_text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+.login_text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2em;
+  display:inline-block;
+  height: 2rem;
+}
+
+.info_p {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 2rem;
+  color: dimgray;
+}
+
+.login_hr {
+  color: darkslategray;
+  height: 0.15rem;
+  width: 7.5rem;
+  margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 500px) {
+  .login_div {
+    height: 25rem;
+    width: 18rem;
+  }
+
+  .login_branding {
+    height: 8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .login_logo {
+    height: 6rem;
+  }
+
+  .login_branding_text {
+    font-size: 2em;
+  }
+
+  .login_text {
+    font-size: 1.5em;
+    height: 1rem;
+  }
+
+  .info_p {
+    visibility: hidden;
+    position: relative;
+    height: 3.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .info_p:after {
+    visibility: visible;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: 'Use your Google Account provided by the school to access your dashboard.';
+  }
+
+  .login_hr {
+    margin-bottom: 1rem;
+  }
+}
