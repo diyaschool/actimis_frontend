@@ -2,24 +2,46 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <script src="/static/jquery-3.6.0.js"></script>
     <link href="/static/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="/static/common.css">
+
+    <script src="/static/jquery-3.6.0.js"></script>
+    <script src="/static/popper.min.js"></script>
+    <script src="/static/bootstrap.min.js"></script>
+    <script src="/static/common.js" ></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <title>Actimis Login</title>
   </head>
   <body unselectable="on"
       onselectstart="return false;"
       onmousedown="return false;">
     <script>
-        function handleCredentialResponse(response) {
-          console.log(response.credential);
+    function showErrorModal(title, body){
+      $('#loginErrorModalTitle').html(title);
+      $('#loginErrorModalBody').html(body);
+      $('#loginErrorModal').modal('show');
+    }
+
+    function handleCredentialResponse(response) {
+      raw_api_req({
+        type: "POST",
+        url: "/auth/authorize/",
+        data: {jwt_token: response.credential},
+        success: function (data) {
+          localStorage.setItem('token', data['data']['token']);
+          localStorage.setItem('email', data['data']['user_data']['email']);
+          window.location.replace("/");
+        },
+        error: function (data) {
+          showErrorModal("Error "+data["error"], data["message"])
         }
+      })
+    }
     </script>
     <div id="g_id_onload"
-      data-client_id="18178721920-v27esm525ddg2pdmemu7i37olq9bglkq.apps.googleusercontent.com"
+      data-client_id=""
       data-context="signin"
       data-ux_mode="popup"
       data-callback="handleCredentialResponse"
@@ -46,5 +68,33 @@
         </div>
       </center>
     </div>
+    <div class="modal" id="loginErrorModal" tabindex="-1" role="dialog" aria-labelledby="loginErrorModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginErrorModalTitle"></h5>
+          </div>
+          <div class="modal-body" id="loginErrorModalBody">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      package(function (data){
+        document.getElementById('g_id_onload').setAttribute("data-client_id", data["google_client_id"])
+        var script = document.createElement('script');
+        script.onload = function(){
+          if (localStorage.getItem("email") != null && localStorage.getItem("token") == null){
+            google.accounts.id.revoke(localStorage.getItem("email"));
+            localStorage.removeItem("email")
+          }
+        }
+        script.src = "https://accounts.google.com/gsi/client";
+        document.head.appendChild(script);
+      })
+    </script>
   </body>
 </html>
