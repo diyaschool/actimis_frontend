@@ -36,6 +36,8 @@
         },
         error: function (data) {
           showErrorModal("Error "+data["error"], data["message"])
+          google.accounts.id.revoke(data['additional_data']['email']);
+
         }
       })
     }
@@ -86,12 +88,6 @@
       package(function (data){
         document.getElementById('g_id_onload').setAttribute("data-client_id", data["google_client_id"])
         var script = document.createElement('script');
-        script.onload = function(){
-          if (localStorage.getItem("email") != null && localStorage.getItem("token") == null){
-            google.accounts.id.revoke(localStorage.getItem("email"));
-            localStorage.removeItem("email")
-          }
-        }
         script.src = "https://accounts.google.com/gsi/client";
         document.head.appendChild(script);
       })
